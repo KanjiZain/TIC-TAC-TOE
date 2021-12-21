@@ -57,7 +57,7 @@ namespace TicTacToe
             this.button3.BackColor = System.Drawing.Color.Silver;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(327, 119);
+            this.button3.Location = new System.Drawing.Point(336, 112);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(108, 101);
             this.button3.TabIndex = 2;
