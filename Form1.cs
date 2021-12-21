@@ -387,5 +387,10 @@ namespace TicTacToe
         {
             Application.Restart();
         }
+
+        private void TITLE_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

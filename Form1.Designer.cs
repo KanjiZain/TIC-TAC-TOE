@@ -164,11 +164,12 @@ namespace TicTacToe
             // 
             this.TITLE.AutoSize = true;
             this.TITLE.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TITLE.Location = new System.Drawing.Point(62, 23);
+            this.TITLE.Location = new System.Drawing.Point(-21, 18);
             this.TITLE.Name = "TITLE";
-            this.TITLE.Size = new System.Drawing.Size(520, 73);
+            this.TITLE.Size = new System.Drawing.Size(711, 73);
             this.TITLE.TabIndex = 9;
-            this.TITLE.Text = "TIC - TAC - TOE";
+            this.TITLE.Text = "TIC - TAC - TOE (Zain)";
+            this.TITLE.Click += new System.EventHandler(this.TITLE_Click);
             // 
             // label1
             // 
