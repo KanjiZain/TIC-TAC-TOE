@@ -50,6 +50,7 @@ namespace TicTacToe
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label8 = new System.Windows.Forms.Label();
             this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button3
@@ -164,11 +165,11 @@ namespace TicTacToe
             // 
             this.TITLE.AutoSize = true;
             this.TITLE.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TITLE.Location = new System.Drawing.Point(-21, 18);
+            this.TITLE.Location = new System.Drawing.Point(61, 9);
             this.TITLE.Name = "TITLE";
-            this.TITLE.Size = new System.Drawing.Size(711, 73);
+            this.TITLE.Size = new System.Drawing.Size(520, 73);
             this.TITLE.TabIndex = 9;
-            this.TITLE.Text = "TIC - TAC - TOE (Zain)";
+            this.TITLE.Text = "TIC - TAC - TOE";
             this.TITLE.Click += new System.EventHandler(this.TITLE_Click);
             // 
             // label1
@@ -263,7 +264,7 @@ namespace TicTacToe
             // button10
             // 
             this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(456, 271);
+            this.button10.Location = new System.Drawing.Point(456, 236);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(177, 61);
             this.button10.TabIndex = 18;
@@ -271,12 +272,24 @@ namespace TicTacToe
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
+            // button11
+            // 
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.Location = new System.Drawing.Point(456, 303);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(177, 61);
+            this.button11.TabIndex = 19;
+            this.button11.Text = "4*4";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(648, 515);
+            this.Controls.Add(this.button11);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -327,6 +340,7 @@ namespace TicTacToe
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
     }
 }
 
