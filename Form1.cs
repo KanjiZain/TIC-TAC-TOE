@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TicTacToe
+namespace Alien_Invaders
 {
     public partial class Form1 : Form
     {
@@ -179,8 +179,8 @@ namespace TicTacToe
             }
             check_win();
         }
-        // TIC TAC TOE BUTTONS -------------------------------
 
+        // TIC TAC TOE BUTTONS -------------------------------
         // TIC TAC TOE MATRIX
         private void check_win()
         {
@@ -340,7 +340,6 @@ namespace TicTacToe
                     if (value_y == 2)
                         return button3;
                     return button1;
-                    break;
                 case 1:
                     if (value_y == 0)
                         return button6;
@@ -349,7 +348,6 @@ namespace TicTacToe
                     if (value_y == 2)
                         return button4;
                     return button1;
-                    break;
                 case 2:
                     if (value_y == 0)
                         return button9;
@@ -358,7 +356,6 @@ namespace TicTacToe
                     if (value_y == 2)
                         return button7;
                     return button1;
-                    break;
 
                 default:
                     restart_matrix();
@@ -383,19 +380,17 @@ namespace TicTacToe
         }
 
         // Reset game
-        private void button10_Click(object sender, EventArgs e)
+
+        private void button10_Click_1(object sender, EventArgs e)
         {
             Application.Restart();
         }
 
-        private void TITLE_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button11_Click(object sender, EventArgs e)
         {
-            
+            Form2 form2 = new Form2();
+            form2.Show();
         }
     }
 }
+
