@@ -185,65 +185,62 @@ namespace Alien_Invaders
         private void check_win()
         {
             // Check rows
-            for (int i = 0; i < 4; ++i)
+            /*for (int i = 0; i < 4; ++i)
             {
                 if (Convert.ToInt32(boardValue[i, 0]) == Convert.ToInt32(boardValue[i, 1]) &&
                     Convert.ToInt32(boardValue[i, 1]) == Convert.ToInt32(boardValue[i, 2]) &&
                     Convert.ToInt32(boardValue[i, 2]) == Convert.ToInt32(boardValue[i, 3]) &&
-                    Convert.ToInt32(boardValue[i, 3]) != 0)
+                    Convert.ToInt32(boardValue[i, 2]) != 0)
                 {
-                    color_winning_buttons(find_button_by_value(i, 0),
-                        find_button_by_value(i, 1),
-                        find_button_by_value(i, 2),
-                        find_button_by_value(i, 3)
-                        );
+                    
                     display_win_screen(boardValue[i, 0]);
 
                     return;
                 }
+            }*/
+
+            // Check columns
+           /* for (int i = 0; i < 3; ++i)
+            {
+                if (Convert.ToInt32(boardValue[0, i]) == Convert.ToInt32(boardValue[1, i]) &&
+                    Convert.ToInt32(boardValue[1, i]) == Convert.ToInt32(boardValue[2, i]) &&
+                    Convert.ToInt32(boardValue[1, i]) == Convert.ToInt32(boardValue[2, i]) &&
+                    Convert.ToInt32(boardValue[3, i]) != 0)
+                {
+                   *//* color_winning_buttons(find_button_by_value(0, i),
+                        find_button_by_value(1, i),
+                        find_button_by_value(2, i),
+                        find_button_by_value(3, i));*//*
+                    display_win_screen(boardValue[1, i]);
+                    return;
+                }
+            }*/
+
+            // Check diagonals
+          /*  if (Convert.ToInt32(boardValue[0, 0]) == Convert.ToInt32(boardValue[1, 1]) &&
+                Convert.ToInt32(boardValue[1, 1]) == Convert.ToInt32(boardValue[2, 2]) &&
+                Convert.ToInt32(boardValue[2, 2]) == Convert.ToInt32(boardValue[3, 3]) &&
+                Convert.ToInt32(boardValue[3, 3]) != 0)
+            {
+                color_winning_buttons(find_button_by_value(0, 0),
+                    find_button_by_value(1, 1),
+                    find_button_by_value(2, 2),
+                    find_button_by_value(3, 3));
+                display_win_screen(boardValue[1, 1]);
+                return;
+            }*/
+            /*else if (Convert.ToInt32(boardValue[3, 0]) == Convert.ToInt32(boardValue[1, 2]) &&
+              Convert.ToInt32(boardValue[1, 2]) == Convert.ToInt32(boardValue[2, 1]) &&
+              Convert.ToInt32(boardValue[2 ,1]) == Convert.ToInt32(boardValue[3, 0]) &&
+              Convert.ToInt32(boardValue[3, 0]) != 0)*/
+            {
+                /*color_winning_buttons(find_button_by_value(0, 2),
+                    find_button_by_value(1, 1),
+                    find_button_by_value(2, 0),
+                    find_button_by_value(1, 1));*/
+                display_win_screen(boardValue[1, 1]);
+                return;
             }
-
-            //// Check columns
-            //for (int i = 0; i < 3; ++i)
-            //{
-            //    if (Convert.ToInt32(boardValue[0, i]) == Convert.ToInt32(boardValue[1, i]) &&
-            //        Convert.ToInt32(boardValue[1, i]) == Convert.ToInt32(boardValue[2, i]) &&
-            //        Convert.ToInt32(boardValue[1, i]) == Convert.ToInt32(boardValue[2, i]) &&
-            //        Convert.ToInt32(boardValue[2, i]) != 0)
-            //    {
-            //        color_winning_buttons(find_button_by_value(0, i),
-            //            find_button_by_value(1, i),
-            //            find_button_by_value(2, i),
-            //            find_button_by_value(3, i));
-            //        display_win_screen(boardValue[1, i]);
-            //        return;
-            //    }
-            //}
-
-            //// Check diagonals
-            //if (Convert.ToInt32(boardValue[0, 0]) == Convert.ToInt32(boardValue[1, 1]) &&
-            //    Convert.ToInt32(boardValue[1, 1]) == Convert.ToInt32(boardValue[2, 2]) &&
-            //    Convert.ToInt32(boardValue[2, 2]) == Convert.ToInt32(boardValue[3, 3]) &&
-            //    Convert.ToInt32(boardValue[3, 3]) != 0)
-            //{
-            //    color_winning_buttons(find_button_by_value(0, 0),
-            //        find_button_by_value(1, 1),
-            //        find_button_by_value(2, 2),
-            //        find_button_by_value(3, 3));
-            //    display_win_screen(boardValue[1, 1]);
-            //    return;
-            //}
-            //else if (Convert.ToInt32(boardValue[0, 2]) == Convert.ToInt32(boardValue[1, 1]) &&
-            //  Convert.ToInt32(boardValue[1, 1]) == Convert.ToInt32(boardValue[2, 0]) &&
-            //  Convert.ToInt32(boardValue[2, 0]) != 0)
-            //{
-            //    color_winning_buttons(find_button_by_value(0, 2),
-            //        find_button_by_value(1, 1),
-            //        find_button_by_value(2, 0),
-            //        find_button_by_value(1, 1));
-            //    display_win_screen(boardValue[1, 1]);
-            //    return;
-            //}
 
             // Check draw
             bool is_completed = true;
@@ -473,6 +470,23 @@ namespace Alien_Invaders
             {
                 player1_turn = false;
                 ((Button)sender).Text = "X";
+                boardValue[0, 3] = X_VALUE;
+            }
+            else
+            {
+                player1_turn = true;
+                ((Button)sender).Text = "O";
+                boardValue[0, 3] = O_VALUE;
+            }
+            check_win();
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            if (player1_turn == true)
+            {
+                player1_turn = false;
+                ((Button)sender).Text = "X";
                 boardValue[3, 3] = X_VALUE;
             }
             else
@@ -484,7 +498,7 @@ namespace Alien_Invaders
             check_win();
         }
 
-        private void button15_Click(object sender, EventArgs e)
+        private void button16_Click(object sender, EventArgs e)
         {
             if (player1_turn == true)
             {
@@ -497,23 +511,6 @@ namespace Alien_Invaders
                 player1_turn = true;
                 ((Button)sender).Text = "O";
                 boardValue[3, 2] = O_VALUE;
-            }
-            check_win();
-        }
-
-        private void button16_Click(object sender, EventArgs e)
-        {
-            if (player1_turn == true)
-            {
-                player1_turn = false;
-                ((Button)sender).Text = "X";
-                boardValue[3, 1] = X_VALUE;
-            }
-            else
-            {
-                player1_turn = true;
-                ((Button)sender).Text = "O";
-                boardValue[3, 1] = O_VALUE;
             }
             check_win();
         }
