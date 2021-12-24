@@ -10,16 +10,15 @@ using System.Windows.Forms;
 
 namespace Alien_Invaders
 {
-
-    public partial class Form2 : Form
+    public partial class Form4 : Form
     {
         // Variables
         private bool player1_turn = true;
-        private int[,] boardValue = new int[4, 4];
+        private int[,] boardValue = new int[5, 5];
         const int X_VALUE = 1;
         const int O_VALUE = 2;
 
-        public Form2()
+        public Form4()
         {
             InitializeComponent();
             restart_matrix();
@@ -95,6 +94,24 @@ namespace Alien_Invaders
             }
             check_win();
         }
+
+        private void button28_Click(object sender, EventArgs e)
+        {
+            if (player1_turn == true)
+            {
+                player1_turn = false;
+                ((Button)sender).Text = "X";
+                boardValue[0, 4] = X_VALUE;
+            }
+            else
+            {
+                player1_turn = true;
+                ((Button)sender).Text = "O";
+                boardValue[0, 4] = O_VALUE;
+            }
+            check_win();
+        }
+
         private void button6_Click(object sender, EventArgs e) //Button 1,0
         {
             if (player1_turn == true)
@@ -159,6 +176,23 @@ namespace Alien_Invaders
                 player1_turn = true;
                 ((Button)sender).Text = "O";
                 boardValue[1, 3] = O_VALUE;
+            }
+            check_win();
+        }
+
+        private void button27_Click(object sender, EventArgs e)
+        {
+            if (player1_turn == true)
+            {
+                player1_turn = false;
+                ((Button)sender).Text = "X";
+                boardValue[1, 4] = X_VALUE;
+            }
+            else
+            {
+                player1_turn = true;
+                ((Button)sender).Text = "O";
+                boardValue[1, 4] = O_VALUE;
             }
             check_win();
         }
@@ -231,6 +265,23 @@ namespace Alien_Invaders
             check_win();
         }
 
+        private void button26_Click(object sender, EventArgs e)
+        {
+            if (player1_turn == true)
+            {
+                player1_turn = false;
+                ((Button)sender).Text = "X";
+                boardValue[2, 4] = X_VALUE;
+            }
+            else
+            {
+                player1_turn = true;
+                ((Button)sender).Text = "O";
+                boardValue[2, 4] = O_VALUE;
+            }
+            check_win();
+        }
+
         private void button18_Click_1(object sender, EventArgs e)  //Button 3,0
         {
             if (player1_turn == true)
@@ -295,6 +346,108 @@ namespace Alien_Invaders
                 player1_turn = true;
                 ((Button)sender).Text = "O";
                 boardValue[3, 3] = O_VALUE;
+            }
+            check_win();
+        }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            if (player1_turn == true)
+            {
+                player1_turn = false;
+                ((Button)sender).Text = "X";
+                boardValue[3, 4] = X_VALUE;
+            }
+            else
+            {
+                player1_turn = true;
+                ((Button)sender).Text = "O";
+                boardValue[3, 4] = O_VALUE;
+            }
+            check_win();
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            if (player1_turn == true)
+            {
+                player1_turn = false;
+                ((Button)sender).Text = "X";
+                boardValue[4, 0] = X_VALUE;
+            }
+            else
+            {
+                player1_turn = true;
+                ((Button)sender).Text = "O";
+                boardValue[4, 0] = O_VALUE;
+            }
+            check_win();
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            if (player1_turn == true)
+            {
+                player1_turn = false;
+                ((Button)sender).Text = "X";
+                boardValue[4, 1] = X_VALUE;
+            }
+            else
+            {
+                player1_turn = true;
+                ((Button)sender).Text = "O";
+                boardValue[4, 1] = O_VALUE;
+            }
+            check_win();
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            if (player1_turn == true)
+            {
+                player1_turn = false;
+                ((Button)sender).Text = "X";
+                boardValue[4, 2] = X_VALUE;
+            }
+            else
+            {
+                player1_turn = true;
+                ((Button)sender).Text = "O";
+                boardValue[4, 2] = O_VALUE;
+            }
+            check_win();
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            if (player1_turn == true)
+            {
+                player1_turn = false;
+                ((Button)sender).Text = "X";
+                boardValue[4, 3] = X_VALUE;
+            }
+            else
+            {
+                player1_turn = true;
+                ((Button)sender).Text = "O";
+                boardValue[4, 3] = O_VALUE;
+            }
+            check_win();
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            if (player1_turn == true)
+            {
+                player1_turn = false;
+                ((Button)sender).Text = "X";
+                boardValue[4, 4] = X_VALUE;
+            }
+            else
+            {
+                player1_turn = true;
+                ((Button)sender).Text = "O";
+                boardValue[4, 4] = O_VALUE;
             }
             check_win();
         }
@@ -366,8 +519,8 @@ namespace Alien_Invaders
 
             // Check draw
             bool is_completed = true;
-            for (int i = 0; i < 4; ++i)
-                for (int j = 0; j < 4; j++)
+            for (int i = 0; i < 5; ++i)
+                for (int j = 0; j < 5; j++)
                     if (boardValue[i, j] == 0)
                         is_completed = false;
             if (is_completed)
@@ -402,8 +555,8 @@ namespace Alien_Invaders
         // Restart tic tac toe board
         private void restart_matrix()
         {
-            for (int i = 0; i < 4; ++i)
-                for (int j = 0; j < 4; ++j)
+            for (int i = 0; i < 5; ++i)
+                for (int j = 0; j < 5; ++j)
                     boardValue[i, j] = 0;
 
             clear_buttons();
@@ -411,7 +564,7 @@ namespace Alien_Invaders
         }
 
         // Color winning buttons
-        private void color_winning_buttons(Button button1, Button button2, Button button3 , Button button4)
+        private void color_winning_buttons(Button button1, Button button2, Button button3, Button button4)
         {
             button1.BackColor = Color.Red;
             button2.BackColor = Color.Red;
@@ -439,6 +592,16 @@ namespace Alien_Invaders
             button16.Text = "";
             button17.Text = "";
             button18.Text = "";
+            button20.Text = "";
+            button21.Text = "";
+            button22.Text = "";
+            button23.Text = "";
+            button24.Text = "";
+            button25.Text = "";
+            button26.Text = "";
+            button27.Text = "";
+            button28.Text = "";
+
 
             // Back color
             button1.BackColor = Color.Green;
@@ -457,6 +620,15 @@ namespace Alien_Invaders
             button16.BackColor = Color.Green;
             button17.BackColor = Color.Green;
             button18.BackColor = Color.Green;
+            button20.BackColor = Color.Green;
+            button21.BackColor = Color.Green;
+            button22.BackColor = Color.Green;
+            button23.BackColor = Color.Green;
+            button24.BackColor = Color.Green;
+            button25.BackColor = Color.Green;
+            button26.BackColor = Color.Green;
+            button27.BackColor = Color.Green;
+            button28.BackColor = Color.Green;
 
 
             // Fore color
@@ -476,6 +648,16 @@ namespace Alien_Invaders
             button16.ForeColor = Color.White;
             button17.ForeColor = Color.White;
             button18.ForeColor = Color.White;
+            button18.ForeColor = Color.White;
+            button20.ForeColor = Color.White;
+            button21.ForeColor = Color.White;
+            button22.ForeColor = Color.White;
+            button23.ForeColor = Color.White;
+            button24.ForeColor = Color.White;
+            button25.ForeColor = Color.White;
+            button26.ForeColor = Color.White;
+            button27.ForeColor = Color.White;
+            button28.ForeColor = Color.White;
         }
 
         // Find a button by it's value
@@ -541,7 +723,7 @@ namespace Alien_Invaders
 
         private void timer1_Tick_1(object sender, EventArgs e)
         {
-            if(player1_turn == true)
+            if (player1_turn == true)
             {
                 label1.ForeColor = Color.Purple;
                 label2.ForeColor = Color.DarkGray;
@@ -564,25 +746,10 @@ namespace Alien_Invaders
             button10.BackColor = Color.Chocolate;
         }
 
-        private void button11_MouseHover(object sender, EventArgs e)  //4*4 Button
-        {
-            button11.BackColor = Color.SandyBrown;
-        }
-
-        private void button11_MouseLeave(object sender, EventArgs e)
-        {
-            button11.BackColor = Color.Chocolate;
-        }
 
         private void button19_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void button11_Click(object sender, EventArgs e)
-        {
-            Form4 form4 = new Form4();
-            form4.ShowDialog();
         }
     }
 }

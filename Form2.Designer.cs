@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -57,28 +58,36 @@
             this.button17 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.button19 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button11
             // 
+            this.button11.BackColor = System.Drawing.Color.Chocolate;
             this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button11.Location = new System.Drawing.Point(579, 288);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(177, 61);
             this.button11.TabIndex = 59;
-            this.button11.Text = "4*4";
-            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Text = "5*5";
+            this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            this.button11.MouseLeave += new System.EventHandler(this.button11_MouseLeave);
+            this.button11.MouseHover += new System.EventHandler(this.button11_MouseHover);
             // 
             // button10
             // 
+            this.button10.BackColor = System.Drawing.Color.Chocolate;
             this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button10.Location = new System.Drawing.Point(579, 221);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(177, 61);
             this.button10.TabIndex = 58;
             this.button10.Text = "RESET GAME";
-            this.button10.UseVisualStyleBackColor = true;
+            this.button10.UseVisualStyleBackColor = false;
             this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.button10.MouseLeave += new System.EventHandler(this.button10_MouseLeave);
+            this.button10.MouseHover += new System.EventHandler(this.button10_MouseHover);
             // 
             // label8
             // 
@@ -94,7 +103,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.ForeColor = System.Drawing.Color.LimeGreen;
             this.label7.Location = new System.Drawing.Point(710, 445);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(30, 31);
@@ -105,7 +114,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Lime;
+            this.label6.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label6.Location = new System.Drawing.Point(710, 404);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(30, 31);
@@ -116,7 +125,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.ForeColor = System.Drawing.Color.LimeGreen;
             this.label4.Location = new System.Drawing.Point(582, 445);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(122, 31);
@@ -127,7 +136,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Lime;
+            this.label5.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label5.Location = new System.Drawing.Point(582, 404);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(122, 31);
@@ -371,11 +380,23 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
+            // button19
+            // 
+            this.button19.Location = new System.Drawing.Point(606, 543);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(134, 37);
+            this.button19.TabIndex = 67;
+            this.button19.Text = "Exit";
+            this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LemonChiffon;
             this.ClientSize = new System.Drawing.Size(796, 627);
+            this.Controls.Add(this.button19);
             this.Controls.Add(this.button15);
             this.Controls.Add(this.button16);
             this.Controls.Add(this.button17);
@@ -403,8 +424,9 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "TIC TAC TOE (4*4)";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -440,5 +462,6 @@
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button button19;
     }
 }

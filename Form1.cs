@@ -12,11 +12,13 @@ namespace Alien_Invaders
 {
     public partial class Form1 : Form
     {
+        
         // Variables
         private bool player1_turn = true;
         private int[,] boardValue = new int[3, 3];
         const int X_VALUE = 1;
         const int O_VALUE = 2;
+        
 
         public Form1()
         {
@@ -191,10 +193,10 @@ namespace Alien_Invaders
                     Convert.ToInt32(boardValue[i, 1]) == Convert.ToInt32(boardValue[i, 2]) &&
                     Convert.ToInt32(boardValue[i, 1]) != 0)
                 {
-                   /* color_winning_buttons(
+                    color_winning_buttons(
                         find_button_by_value(i, 0),
                         find_button_by_value(i, 1),
-                        find_button_by_value(i, 2));*/
+                        find_button_by_value(i, 2));
                     display_win_screen(boardValue[i, 0]);
 
                     return;
@@ -208,9 +210,9 @@ namespace Alien_Invaders
                     Convert.ToInt32(boardValue[1, i]) == Convert.ToInt32(boardValue[2, i]) &&
                     Convert.ToInt32(boardValue[2, i]) != 0)
                 {
-                   /* color_winning_buttons(find_button_by_value(0, i),
+                    color_winning_buttons(find_button_by_value(0, i),
                         find_button_by_value(1, i),
-                        find_button_by_value(2, i));*/
+                        find_button_by_value(2, i));
                     display_win_screen(boardValue[1, i]);
                     return;
                 }
@@ -221,9 +223,9 @@ namespace Alien_Invaders
                 Convert.ToInt32(boardValue[1, 1]) == Convert.ToInt32(boardValue[2, 2]) &&
                 Convert.ToInt32(boardValue[2, 2]) != 0)
             {
-               /* color_winning_buttons(find_button_by_value(0, 0),
+                color_winning_buttons(find_button_by_value(0, 0),
                     find_button_by_value(1, 1),
-                    find_button_by_value(2, 2));*/
+                    find_button_by_value(2, 2));
                 display_win_screen(boardValue[1, 1]);
                 return;
             }
@@ -231,9 +233,9 @@ namespace Alien_Invaders
               Convert.ToInt32(boardValue[1, 1]) == Convert.ToInt32(boardValue[2, 0]) &&
               Convert.ToInt32(boardValue[2, 0]) != 0)
             {
-               /* color_winning_buttons(find_button_by_value(0, 2),
+                color_winning_buttons(find_button_by_value(0, 2),
                     find_button_by_value(1, 1),
-                    find_button_by_value(2, 0));*/
+                    find_button_by_value(2, 0));
                 display_win_screen(boardValue[1, 1]);
                 return;
             }
@@ -254,12 +256,14 @@ namespace Alien_Invaders
         // Display win message
         private void display_win_screen(int val)
         {
+         
             if (val == X_VALUE)
             {
                 MessageBox.Show("Player1 wins!");
                 int player1_score = Convert.ToInt32(label6.Text);
                 ++player1_score;
                 label6.Text = player1_score.ToString();
+                label6.ForeColor = Color.Red;
             }
             else
             {
@@ -329,7 +333,7 @@ namespace Alien_Invaders
         }
 
         // Find a button by it's value
-        /*private Button find_button_by_value(int value_x, int value_y)
+        private Button find_button_by_value(int value_x, int value_y)
         {
             switch (value_x)
             {
@@ -363,7 +367,7 @@ namespace Alien_Invaders
                     MessageBox.Show("Something failed!");
                     return button1;
             }
-        }*/
+        }
 
         // Select active player
         private void timer1_Tick(object sender, EventArgs e)
@@ -393,9 +397,30 @@ namespace Alien_Invaders
             form2.Show();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void button10_MouseHover(object sender, EventArgs e) //Reset Button
         {
+            button10.BackColor = Color.SandyBrown;
+        }
 
+        private void button10_MouseLeave(object sender, EventArgs e)
+        {
+            button10.BackColor = Color.Chocolate;
+        }
+
+
+        private void button11_MouseHover(object sender, EventArgs e) //4*4 Button
+        {
+            button11.BackColor = Color.SandyBrown;
+        }
+
+        private void button11_MouseLeave(object sender, EventArgs e)  
+        {
+            button11.BackColor = Color.Chocolate;
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
