@@ -370,13 +370,13 @@ namespace Alien_Invaders
         {
             if (player1_turn == true)
             {
-                label1.ForeColor = Color.Green;
-                label2.ForeColor = Color.Black;
+                label1.ForeColor = Color.Purple;
+                label2.ForeColor = Color.DarkGray;
             }
             else
             {
-                label2.ForeColor = Color.Green;
-                label1.ForeColor = Color.Black;
+                label2.ForeColor = Color.Purple;
+                label1.ForeColor = Color.DarkGray;
             }
         }
 

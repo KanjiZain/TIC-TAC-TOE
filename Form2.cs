@@ -26,7 +26,7 @@ namespace Alien_Invaders
         }
 
         // TIC TAC TOE BUTTONS -------------------------------
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) //Button 0,0
         {
             if (player1_turn == true)
             {
@@ -44,7 +44,7 @@ namespace Alien_Invaders
             check_win();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) //Button 0,1
         {
             if (player1_turn == true)
             {
@@ -61,7 +61,7 @@ namespace Alien_Invaders
             check_win();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e) //Button 0,2
         {
             if (player1_turn == true)
             {
@@ -78,7 +78,23 @@ namespace Alien_Invaders
             check_win();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void button14_Click(object sender, EventArgs e)  //Button 0,3
+        {
+            if (player1_turn == true)
+            {
+                player1_turn = false;
+                ((Button)sender).Text = "X";
+                boardValue[0, 3] = X_VALUE;
+            }
+            else
+            {
+                player1_turn = true;
+                ((Button)sender).Text = "O";
+                boardValue[0, 3] = O_VALUE;
+            }
+            check_win();
+        }
+        private void button6_Click(object sender, EventArgs e) //Button 1,0
         {
             if (player1_turn == true)
             {
@@ -95,7 +111,7 @@ namespace Alien_Invaders
             check_win();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e) //Button 1,1
         {
             if (player1_turn == true)
             {
@@ -112,7 +128,7 @@ namespace Alien_Invaders
             check_win();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e) //Button 1,2
         {
             if (player1_turn == true)
             {
@@ -129,7 +145,24 @@ namespace Alien_Invaders
             check_win();
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private void button13_Click(object sender, EventArgs e) //Button 1,3
+        {
+            if (player1_turn == true)
+            {
+                player1_turn = false;
+                ((Button)sender).Text = "X";
+                boardValue[1, 3] = X_VALUE;
+            }
+            else
+            {
+                player1_turn = true;
+                ((Button)sender).Text = "O";
+                boardValue[1, 3] = O_VALUE;
+            }
+            check_win();
+        }
+
+        private void button9_Click(object sender, EventArgs e) //Button 2,0
         {
             if (player1_turn == true)
             {
@@ -146,7 +179,7 @@ namespace Alien_Invaders
             check_win();
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void button8_Click(object sender, EventArgs e) //Button 2,1
         {
             if (player1_turn == true)
             {
@@ -163,7 +196,7 @@ namespace Alien_Invaders
             check_win();
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void button7_Click(object sender, EventArgs e) //Button 2,2
         {
             if (player1_turn == true)
             {
@@ -180,44 +213,132 @@ namespace Alien_Invaders
             check_win();
         }
 
-        // TIC TAC TOE BUTTONS -------------------------------
+        private void button12_Click(object sender, EventArgs e) //Button 2,3
+        {
+            if (player1_turn == true)
+            {
+                player1_turn = false;
+                ((Button)sender).Text = "X";
+                boardValue[2, 3] = X_VALUE;
+            }
+            else
+            {
+                player1_turn = true;
+                ((Button)sender).Text = "O";
+                boardValue[2, 3] = O_VALUE;
+            }
+            check_win();
+        }
+
+        private void button18_Click_1(object sender, EventArgs e)  //Button 3,0
+        {
+            if (player1_turn == true)
+            {
+                player1_turn = false;
+                ((Button)sender).Text = "X";
+                boardValue[3, 0] = X_VALUE;
+            }
+            else
+            {
+                player1_turn = true;
+                ((Button)sender).Text = "O";
+                boardValue[3, 0] = O_VALUE;
+            }
+            check_win();
+        }
+
+        private void button17_Click(object sender, EventArgs e) //Button 3,1
+        {
+            if (player1_turn == true)
+            {
+                player1_turn = false;
+                ((Button)sender).Text = "X";
+                boardValue[3, 1] = X_VALUE;
+            }
+            else
+            {
+                player1_turn = true;
+                ((Button)sender).Text = "O";
+                boardValue[3, 1] = O_VALUE;
+            }
+            check_win();
+        }
+
+        private void button16_Click(object sender, EventArgs e) //Button 3,2
+        {
+            if (player1_turn == true)
+            {
+                player1_turn = false;
+                ((Button)sender).Text = "X";
+                boardValue[3, 2] = X_VALUE;
+            }
+            else
+            {
+                player1_turn = true;
+                ((Button)sender).Text = "O";
+                boardValue[3, 2] = O_VALUE;
+            }
+            check_win();
+        }
+
+        private void button15_Click(object sender, EventArgs e) //Button 3,3
+        {
+            if (player1_turn == true)
+            {
+                player1_turn = false;
+                ((Button)sender).Text = "X";
+                boardValue[3, 3] = X_VALUE;
+            }
+            else
+            {
+                player1_turn = true;
+                ((Button)sender).Text = "O";
+                boardValue[3, 3] = O_VALUE;
+            }
+            check_win();
+        }
+
         // TIC TAC TOE MATRIX
         private void check_win()
         {
             // Check rows
-            /*for (int i = 0; i < 4; ++i)
+            for (int i = 0; i < 4; ++i)
             {
                 if (Convert.ToInt32(boardValue[i, 0]) == Convert.ToInt32(boardValue[i, 1]) &&
                     Convert.ToInt32(boardValue[i, 1]) == Convert.ToInt32(boardValue[i, 2]) &&
                     Convert.ToInt32(boardValue[i, 2]) == Convert.ToInt32(boardValue[i, 3]) &&
                     Convert.ToInt32(boardValue[i, 2]) != 0)
                 {
-                    
+                    color_winning_buttons(
+                        find_button_by_value(i, 0),
+                         find_button_by_value(i, 1),
+                         find_button_by_value(i, 2),
+                         find_button_by_value(i, 3));
                     display_win_screen(boardValue[i, 0]);
 
                     return;
                 }
-            }*/
+            }
 
             // Check columns
-           /* for (int i = 0; i < 3; ++i)
+            for (int i = 0; i < 3; ++i)
             {
                 if (Convert.ToInt32(boardValue[0, i]) == Convert.ToInt32(boardValue[1, i]) &&
                     Convert.ToInt32(boardValue[1, i]) == Convert.ToInt32(boardValue[2, i]) &&
-                    Convert.ToInt32(boardValue[1, i]) == Convert.ToInt32(boardValue[2, i]) &&
+                    Convert.ToInt32(boardValue[2, i]) == Convert.ToInt32(boardValue[3, i]) &&
                     Convert.ToInt32(boardValue[3, i]) != 0)
                 {
-                   *//* color_winning_buttons(find_button_by_value(0, i),
+                    color_winning_buttons(find_button_by_value(0, i),
                         find_button_by_value(1, i),
                         find_button_by_value(2, i),
-                        find_button_by_value(3, i));*//*
+                        find_button_by_value(3, i));
                     display_win_screen(boardValue[1, i]);
                     return;
                 }
-            }*/
+            }
 
             // Check diagonals
-          /*  if (Convert.ToInt32(boardValue[0, 0]) == Convert.ToInt32(boardValue[1, 1]) &&
+            if (Convert.ToInt32(boardValue[0, 0]) == Convert.ToInt32(boardValue[1, 1]) &&
                 Convert.ToInt32(boardValue[1, 1]) == Convert.ToInt32(boardValue[2, 2]) &&
                 Convert.ToInt32(boardValue[2, 2]) == Convert.ToInt32(boardValue[3, 3]) &&
                 Convert.ToInt32(boardValue[3, 3]) != 0)
@@ -228,16 +349,16 @@ namespace Alien_Invaders
                     find_button_by_value(3, 3));
                 display_win_screen(boardValue[1, 1]);
                 return;
-            }*/
-            /*else if (Convert.ToInt32(boardValue[3, 0]) == Convert.ToInt32(boardValue[1, 2]) &&
+            }
+            else if (Convert.ToInt32(boardValue[0, 3]) == Convert.ToInt32(boardValue[1, 2]) &&
               Convert.ToInt32(boardValue[1, 2]) == Convert.ToInt32(boardValue[2, 1]) &&
-              Convert.ToInt32(boardValue[2 ,1]) == Convert.ToInt32(boardValue[3, 0]) &&
-              Convert.ToInt32(boardValue[3, 0]) != 0)*/
+              Convert.ToInt32(boardValue[2, 1]) == Convert.ToInt32(boardValue[3, 0]) &&
+              Convert.ToInt32(boardValue[3, 0]) != 0)
             {
-                /*color_winning_buttons(find_button_by_value(0, 2),
-                    find_button_by_value(1, 1),
-                    find_button_by_value(2, 0),
-                    find_button_by_value(1, 1));*/
+                color_winning_buttons(find_button_by_value(1, 2),
+                    find_button_by_value(2, 1),
+                    find_button_by_value(3, 0),
+                    find_button_by_value(0, 3));
                 display_win_screen(boardValue[1, 1]);
                 return;
             }
@@ -258,21 +379,22 @@ namespace Alien_Invaders
         // Display win message
         private void display_win_screen(int val)
         {
+            int player1_score;
+            int player2_score;
             if (val == X_VALUE)
             {
                 MessageBox.Show("Player1 wins!");
-                int player1_score = Convert.ToInt32(label6.Text);
+                player1_score = Convert.ToInt32(label6.Text);
                 ++player1_score;
                 label6.Text = player1_score.ToString();
             }
             else
             {
                 MessageBox.Show("Player2 wins!");
-                int player2_score = Convert.ToInt32(label7.Text);
+                player2_score = Convert.ToInt32(label7.Text);
                 ++player2_score;
                 label7.Text = player2_score.ToString();
             }
-
             restart_matrix();
         }
 
@@ -409,20 +531,6 @@ namespace Alien_Invaders
             }
         }
 
-        // Select active player
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            if (player1_turn == true)
-            {
-                label1.ForeColor = Color.Green;
-                label2.ForeColor = Color.Black;
-            }
-            else
-            {
-                label2.ForeColor = Color.Green;
-                label1.ForeColor = Color.Black;
-            }
-        }
 
         // Reset game
         private void button10_Click(object sender, EventArgs e)
@@ -430,123 +538,18 @@ namespace Alien_Invaders
             Application.Restart();
         }
 
-        private void button12_Click(object sender, EventArgs e)
+        private void timer1_Tick_1(object sender, EventArgs e)
         {
-            if (player1_turn == true)
+            if(player1_turn == true)
             {
-                player1_turn = false;
-                ((Button)sender).Text = "X";
-                boardValue[2, 3] = X_VALUE;
+                label1.ForeColor = Color.Purple;
+                label2.ForeColor = Color.DarkGray;
             }
             else
             {
-                player1_turn = true;
-                ((Button)sender).Text = "O";
-                boardValue[2, 3] = O_VALUE;
+                label2.ForeColor = Color.Purple;
+                label1.ForeColor = Color.DarkGray;
             }
-            check_win();
-        }
-
-        private void button13_Click(object sender, EventArgs e)
-        {
-            if (player1_turn == true)
-            {
-                player1_turn = false;
-                ((Button)sender).Text = "X";
-                boardValue[1, 3] = X_VALUE;
-            }
-            else
-            {
-                player1_turn = true;
-                ((Button)sender).Text = "O";
-                boardValue[1, 3] = O_VALUE;
-            }
-            check_win();
-        }
-
-        private void button14_Click(object sender, EventArgs e)
-        {
-            if (player1_turn == true)
-            {
-                player1_turn = false;
-                ((Button)sender).Text = "X";
-                boardValue[0, 3] = X_VALUE;
-            }
-            else
-            {
-                player1_turn = true;
-                ((Button)sender).Text = "O";
-                boardValue[0, 3] = O_VALUE;
-            }
-            check_win();
-        }
-
-        private void button15_Click(object sender, EventArgs e)
-        {
-            if (player1_turn == true)
-            {
-                player1_turn = false;
-                ((Button)sender).Text = "X";
-                boardValue[3, 3] = X_VALUE;
-            }
-            else
-            {
-                player1_turn = true;
-                ((Button)sender).Text = "O";
-                boardValue[3, 3] = O_VALUE;
-            }
-            check_win();
-        }
-
-        private void button16_Click(object sender, EventArgs e)
-        {
-            if (player1_turn == true)
-            {
-                player1_turn = false;
-                ((Button)sender).Text = "X";
-                boardValue[3, 2] = X_VALUE;
-            }
-            else
-            {
-                player1_turn = true;
-                ((Button)sender).Text = "O";
-                boardValue[3, 2] = O_VALUE;
-            }
-            check_win();
-        }
-
-        private void button17_Click(object sender, EventArgs e)
-        {
-            if (player1_turn == true)
-            {
-                player1_turn = false;
-                ((Button)sender).Text = "X";
-                boardValue[3, 1] = X_VALUE;
-            }
-            else
-            {
-                player1_turn = true;
-                ((Button)sender).Text = "O";
-                boardValue[3, 1] = O_VALUE;
-            }
-            check_win();
-        }
-
-        private void button18_Click(object sender, EventArgs e)
-        {
-            if (player1_turn == true)
-            {
-                player1_turn = false;
-                ((Button)sender).Text = "X";
-                boardValue[3, 0] = X_VALUE;
-            }
-            else
-            {
-                player1_turn = true;
-                ((Button)sender).Text = "O";
-                boardValue[3, 0] = O_VALUE;
-            }
-            check_win();
         }
     }
 }
