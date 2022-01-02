@@ -176,7 +176,7 @@ namespace Alien_Invaders
             // 
             this.TITLE.AutoSize = true;
             this.TITLE.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TITLE.Location = new System.Drawing.Point(40, 19);
+            this.TITLE.Location = new System.Drawing.Point(76, 26);
             this.TITLE.Name = "TITLE";
             this.TITLE.Size = new System.Drawing.Size(520, 73);
             this.TITLE.TabIndex = 29;

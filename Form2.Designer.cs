@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -61,25 +60,11 @@
             this.button19 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button11
-            // 
-            this.button11.BackColor = System.Drawing.Color.Chocolate;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(579, 288);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(177, 61);
-            this.button11.TabIndex = 59;
-            this.button11.Text = "5*5";
-            this.button11.UseVisualStyleBackColor = false;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
-            this.button11.MouseLeave += new System.EventHandler(this.button11_MouseLeave);
-            this.button11.MouseHover += new System.EventHandler(this.button11_MouseHover);
-            // 
             // button10
             // 
             this.button10.BackColor = System.Drawing.Color.Chocolate;
             this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(579, 221);
+            this.button10.Location = new System.Drawing.Point(579, 258);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(177, 61);
             this.button10.TabIndex = 58;
@@ -404,7 +389,6 @@
             this.Controls.Add(this.button12);
             this.Controls.Add(this.button13);
             this.Controls.Add(this.button14);
-            this.Controls.Add(this.button11);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -433,8 +417,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;

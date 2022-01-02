@@ -310,11 +310,6 @@ namespace Alien_Invaders
                     Convert.ToInt32(boardValue[i, 2]) == Convert.ToInt32(boardValue[i, 3]) &&
                     Convert.ToInt32(boardValue[i, 2]) != 0)
                 {
-                    color_winning_buttons(
-                        find_button_by_value(i, 0),
-                         find_button_by_value(i, 1),
-                         find_button_by_value(i, 2),
-                         find_button_by_value(i, 3));
                     display_win_screen(boardValue[i, 0]);
 
                     return;
@@ -329,10 +324,7 @@ namespace Alien_Invaders
                     Convert.ToInt32(boardValue[2, i]) == Convert.ToInt32(boardValue[3, i]) &&
                     Convert.ToInt32(boardValue[3, i]) != 0)
                 {
-                    color_winning_buttons(find_button_by_value(0, i),
-                        find_button_by_value(1, i),
-                        find_button_by_value(2, i),
-                        find_button_by_value(3, i));
+                    
                     display_win_screen(boardValue[1, i]);
                     return;
                 }
@@ -344,10 +336,7 @@ namespace Alien_Invaders
                 Convert.ToInt32(boardValue[2, 2]) == Convert.ToInt32(boardValue[3, 3]) &&
                 Convert.ToInt32(boardValue[3, 3]) != 0)
             {
-                color_winning_buttons(find_button_by_value(0, 0),
-                    find_button_by_value(1, 1),
-                    find_button_by_value(2, 2),
-                    find_button_by_value(3, 3));
+                
                 display_win_screen(boardValue[1, 1]);
                 return;
             }
@@ -356,10 +345,7 @@ namespace Alien_Invaders
               Convert.ToInt32(boardValue[2, 1]) == Convert.ToInt32(boardValue[3, 0]) &&
               Convert.ToInt32(boardValue[3, 0]) != 0)
             {
-                color_winning_buttons(find_button_by_value(1, 2),
-                    find_button_by_value(2, 1),
-                    find_button_by_value(3, 0),
-                    find_button_by_value(0, 3));
+                
                 display_win_screen(boardValue[1, 1]);
                 return;
             }
@@ -410,14 +396,6 @@ namespace Alien_Invaders
             player1_turn = true;
         }
 
-        // Color winning buttons
-        private void color_winning_buttons(Button button1, Button button2, Button button3 , Button button4)
-        {
-            button1.BackColor = Color.Red;
-            button2.BackColor = Color.Red;
-            button3.BackColor = Color.Red;
-            button4.BackColor = Color.Red;
-        }
 
         // Clear buttons
         private void clear_buttons()
@@ -478,61 +456,6 @@ namespace Alien_Invaders
             button18.ForeColor = Color.White;
         }
 
-        // Find a button by it's value
-        private Button find_button_by_value(int value_x, int value_y)
-        {
-            switch (value_x)
-            {
-                case 0:
-                    if (value_y == 0)
-                        return button1;
-                    if (value_y == 1)
-                        return button2;
-                    if (value_y == 2)
-                        return button3;
-                    if (value_y == 3)
-                        return button14;
-                    return button1;
-
-                case 1:
-                    if (value_y == 0)
-                        return button6;
-                    if (value_y == 1)
-                        return button5;
-                    if (value_y == 2)
-                        return button4;
-                    if (value_y == 3)
-                        return button13;
-                    return button1;
-                case 2:
-                    if (value_y == 0)
-                        return button9;
-                    if (value_y == 1)
-                        return button8;
-                    if (value_y == 2)
-                        return button7;
-                    if (value_y == 3)
-                        return button12;
-                    return button1;
-                case 3:
-                    if (value_y == 0)
-                        return button18;
-                    if (value_y == 1)
-                        return button17;
-                    if (value_y == 2)
-                        return button16;
-                    if (value_y == 3)
-                        return button15;
-                    return button1;
-
-                default:
-                    restart_matrix();
-                    MessageBox.Show("Something failed!");
-                    return button1;
-            }
-        }
-
-
         // Reset game
         private void button10_Click(object sender, EventArgs e)
         {
@@ -564,25 +487,9 @@ namespace Alien_Invaders
             button10.BackColor = Color.Chocolate;
         }
 
-        private void button11_MouseHover(object sender, EventArgs e)  //4*4 Button
-        {
-            button11.BackColor = Color.SandyBrown;
-        }
-
-        private void button11_MouseLeave(object sender, EventArgs e)
-        {
-            button11.BackColor = Color.Chocolate;
-        }
-
         private void button19_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void button11_Click(object sender, EventArgs e)
-        {
-            Form4 form4 = new Form4();
-            form4.ShowDialog();
         }
     }
 }
