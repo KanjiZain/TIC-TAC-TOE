@@ -20,11 +20,16 @@ namespace Alien_Invaders
         const int O_VALUE = 2;
         
 
-        public Form1()
+        public Form1(string value1, string value2)
         {
             InitializeComponent();
             restart_matrix();
             player1_turn = true;
+            label9.Text = value1;
+            label1.Text = value1; 
+            label4.Text = value2;
+            label2.Text = value2;
+            string abc = value1;
         }
 
         // TIC TAC TOE BUTTONS -------------------------------
@@ -258,6 +263,7 @@ namespace Alien_Invaders
                 int player2_score = Convert.ToInt32(label7.Text);
                 ++player2_score;
                 label7.Text = player2_score.ToString();
+                label6.ForeColor = Color.Red;
             }
 
             restart_matrix();
@@ -318,12 +324,16 @@ namespace Alien_Invaders
             if (player1_turn == true)
             {
                 label1.ForeColor = Color.Purple;
+                label10.ForeColor = Color.Purple;
                 label2.ForeColor = Color.DarkGray;
+                label11.ForeColor = Color.DarkGray;
             }
             else
             {
                 label2.ForeColor = Color.Purple;
+                label11.ForeColor = Color.Purple;
                 label1.ForeColor = Color.DarkGray;
+                label10.ForeColor = Color.DarkGray;
             }
         }
 
@@ -336,7 +346,9 @@ namespace Alien_Invaders
 
         private void button11_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
+            string text1 = label9.Text;
+            string text2 = label2.Text;
+            Form2 form2 = new Form2(text1, text2);
             form2.Show();
         }
 
@@ -364,6 +376,11 @@ namespace Alien_Invaders
         private void button19_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

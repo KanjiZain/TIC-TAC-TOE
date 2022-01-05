@@ -18,12 +18,17 @@ namespace Alien_Invaders
         private int[,] boardValue = new int[4, 4];
         const int X_VALUE = 1;
         const int O_VALUE = 2;
+        
 
-        public Form2()
+        public Form2(string value1, string value2)
         {
             InitializeComponent();
             restart_matrix();
             player1_turn = true;
+            label1.Text = value1;
+            label2.Text = value2;
+            label5.Text = value1;
+            label4.Text = value2;
         }
 
         // TIC TAC TOE BUTTONS -------------------------------
@@ -31,6 +36,7 @@ namespace Alien_Invaders
         {
             if (player1_turn == true)
             {
+
                 player1_turn = false;
                 ((Button)sender).Text = "X";
                 boardValue[0, 0] = X_VALUE;
@@ -40,6 +46,7 @@ namespace Alien_Invaders
                 player1_turn = true;
                 ((Button)sender).Text = "O";
                 boardValue[0, 0] = O_VALUE;
+              
             }
 
             check_win();
@@ -374,6 +381,7 @@ namespace Alien_Invaders
                 player1_score = Convert.ToInt32(label6.Text);
                 ++player1_score;
                 label6.Text = player1_score.ToString();
+                label6.ForeColor = Color.Red;
             }
             else
             {
@@ -381,6 +389,7 @@ namespace Alien_Invaders
                 player2_score = Convert.ToInt32(label7.Text);
                 ++player2_score;
                 label7.Text = player2_score.ToString();
+                label7.ForeColor = Color.Red;
             }
             restart_matrix();
         }
@@ -468,11 +477,15 @@ namespace Alien_Invaders
             {
                 label1.ForeColor = Color.Purple;
                 label2.ForeColor = Color.DarkGray;
+                label9.ForeColor = Color.Purple;
+                label10.ForeColor = Color.DarkGray;
             }
             else
             {
                 label2.ForeColor = Color.Purple;
                 label1.ForeColor = Color.DarkGray;
+                label10.ForeColor = Color.Purple;
+                label9.ForeColor = Color.DarkGray;
             }
         }
 

@@ -58,6 +58,8 @@
             this.button18 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.button19 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button10
@@ -144,9 +146,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(573, 178);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(177, 31);
+            this.label2.Size = new System.Drawing.Size(113, 31);
             this.label2.TabIndex = 51;
-            this.label2.Text = "Player2  -  O";
+            this.label2.Text = "Player2";
             // 
             // label1
             // 
@@ -154,9 +156,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(573, 138);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(174, 31);
+            this.label1.Size = new System.Drawing.Size(113, 31);
             this.label1.TabIndex = 50;
-            this.label1.Text = "Player1  -  X";
+            this.label1.Text = "Player1";
             // 
             // TITLE
             // 
@@ -375,12 +377,34 @@
             this.button19.UseVisualStyleBackColor = true;
             this.button19.Click += new System.EventHandler(this.button19_Click);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(681, 138);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(75, 31);
+            this.label9.TabIndex = 68;
+            this.label9.Text = "  -  X";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(681, 179);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(78, 31);
+            this.label10.TabIndex = 69;
+            this.label10.Text = "  -  O";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LemonChiffon;
             this.ClientSize = new System.Drawing.Size(796, 627);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.button19);
             this.Controls.Add(this.button15);
             this.Controls.Add(this.button16);
@@ -445,5 +469,7 @@
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button button19;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
     }
 }

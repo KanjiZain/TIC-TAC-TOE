@@ -23,8 +23,14 @@ namespace Alien_Invaders
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
-            form1.Show();
+            
+            string text1 = textBox1.Text;
+            string text2 = textBox2.Text;
+            Form1 form = new Form1(text1,text2);
+            form.Show();
+            textBox1.Text = "";
+            textBox2.Text = "";
+            
         }
 
         private void button2_Click(object sender, EventArgs e)

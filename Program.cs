@@ -17,7 +17,7 @@ namespace TicTacToe
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Alien_Invaders.Form1());
+            Application.Run(new Alien_Invaders.Form3());
         }
     }
 }
